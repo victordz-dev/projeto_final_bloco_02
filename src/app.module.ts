@@ -4,6 +4,8 @@ import { Product } from './product/entity/product.entity';
 import { Category } from './category/entity/category.entity';
 import { ProductModule } from './product/product.module';
 import { CategoryModule } from './category/category.module';
+import { User } from './user/entity/user.entity';
+import { UserModule } from './user/user.module';
 
 @Module({
   imports: [
@@ -14,12 +16,13 @@ import { CategoryModule } from './category/category.module';
       username: 'root',
       password: 'root',
       database: 'db_farmacia',
-      entities: [Product, Category],
+      entities: [Product, Category, User],
       synchronize: true,
       logging: true,
     }),
     ProductModule,
     CategoryModule,
+    UserModule,
   ],
   controllers: [],
   providers: [],
